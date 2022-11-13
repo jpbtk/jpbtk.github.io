@@ -27,6 +27,11 @@ class MyExtension {
           blockType: Scratch.BlockType.REPORTER,
           text: 'こんにちは、世界！'
         }
+        {
+        opcode: 'na'
+        blockType: Scratch.BlockType.REPORTER,
+        text: 'kkkkk'
+　　　　　}
       ]
     };
   }
