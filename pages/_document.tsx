@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <ColorSchemeScript defaultColorScheme="auto" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png"></link>
         <meta name="theme-color" content="#fff" />
