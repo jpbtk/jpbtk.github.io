@@ -69,9 +69,6 @@ export default function Header(props: any) {
             }
             onChange={(query: string) => {
               setQuery(query);
-              if (query.length > 0) {
-                setNewAutoCompleteData(query);
-              }
             }}
             data={query.length > 0 ? autocompletedata : []}
           />
