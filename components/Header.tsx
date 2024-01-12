@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Input } from "@mantine/core";
 import { Paper, Grid, Text, Autocomplete } from "@mantine/core";
 import { PiYoutubeLogoDuotone } from "react-icons/pi";
 import { useRouter } from "next/navigation";
