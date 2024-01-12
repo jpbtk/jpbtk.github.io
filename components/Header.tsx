@@ -3,11 +3,6 @@ import { Paper, Grid, Text, Autocomplete } from "@mantine/core";
 import { PiYoutubeLogoDuotone } from "react-icons/pi";
 import { useRouter } from "next/navigation";
 
-interface HeaderProps {
-  setQuery: (query: string) => void;
-  query: string;
-}
-
 const Header: React.FC<HeaderProps> = (props) => {
   const [autocompletedata, setAutocompletedata] = useState<Array<string>>([]);
   const [query, setQuery] = useState<string>("");
@@ -36,15 +31,6 @@ const Header: React.FC<HeaderProps> = (props) => {
             radius="lg"
             placeholder="検索"
             w="80%"
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                location.href = `/?q=${e.currentTarget.value}`;
-              }
-            }}
-            onLoad={(e) => (e.currentTarget.value = props.query)}
-            onChange={(query: string) => {
-            }}
-            data={query.length > 0 ? autocompletedata : []}
           />
         </Grid.Col>
         <Grid.Col span={1}>
