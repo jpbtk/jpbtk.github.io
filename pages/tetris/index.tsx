@@ -1,10 +1,8 @@
-import Header from "@/components/Header";
 import Tetris from "@/lib/react-tetris";
 
 export default function Game() {
   return (
     <div>
-      <Header />
       <div>
         <h1>Tetris</h1>
         <Tetris
