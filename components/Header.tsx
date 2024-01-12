@@ -23,7 +23,6 @@ export default function Header(props: any) {
           <Text
             size="xl"
             fw={700}
-            onClick={() => router.push("/")}
             style={{ cursor: "pointer" }}
           >
             <PiYoutubeLogoDuotone
