@@ -11,7 +11,6 @@ import { PiYoutubeLogoDuotone } from "react-icons/pi";
 import { Input } from "@mantine/core";
 import { IoSearchOutline } from "react-icons/io5";
 import { useState } from "react";
-import Innertube, { UniversalCache } from "youtubei.js";
 import { useRouter } from "next/navigation";
 
 export default function Header(props: any) {
