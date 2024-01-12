@@ -20,10 +20,6 @@ export default function Header(props: any) {
   const handleQueryChange = (query: string) => {
     props.setQuery(query);
   };
-  const setNewAutoCompleteData = async (query: string) => {
-    const suggestions = await yt.getSearchSuggestions(query);
-    setAutocompletedata(suggestions);
-  };
   return (
     <Paper
       shadow="xl"
