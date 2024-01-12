@@ -1,39 +1,22 @@
-import {
-  Text,
-  Paper,
-  Grid,
-  Button,
-  ActionIcon,
-  Avatar,
-  Autocomplete,
-} from "@mantine/core";
+import React, { useState } from 'react';
+import { Paper, Grid, Text, Autocomplete } from "@mantine/core";
 import { PiYoutubeLogoDuotone } from "react-icons/pi";
-import { Input } from "@mantine/core";
-import { IoSearchOutline } from "react-icons/io5";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function Header(props: any) {
-  const [autocompletedata, setAutocompletedata] = useState(Array<string>());
-  const [query, setQuery] = useState("");
+interface HeaderProps {
+  setQuery: (query: string) => void;
+  query: string;
+}
+
+const Header: React.FC<HeaderProps> = (props) => {
+  const [autocompletedata, setAutocompletedata] = useState<Array<string>>([]);
+  const [query, setQuery] = useState<string>("");
   const router = useRouter();
-  const handleQueryChange = (query: string) => {
-    props.setQuery(query);
-  };
+
   return (
-    <Paper
-      shadow="xl"
-      radius="lg"
-      withBorder
-      w={"90%"}
-      m={"auto"}
-      p={"lg"}
-      mt={"lg"}
-      mb={"lg"}
-    >
+    <Paper shadow="xl" radius="lg" withBorder w="90%" m="auto" p="lg" mt="lg" mb="lg">
       <Grid>
         <Grid.Col span={3}>
-          {/*change by viewport size*/}
           <Text
             size="xl"
             fw={700}
@@ -42,11 +25,7 @@ export default function Header(props: any) {
           >
             <PiYoutubeLogoDuotone
               size={32}
-              style={{
-                verticalAlign: "bottom",
-                marginRight: 8,
-                color: "#e83976",
-              }}
+              style={{ verticalAlign: "bottom", marginRight: 8, color: "#e83976" }}
             />
             The Tube
           </Text>
@@ -55,30 +34,27 @@ export default function Header(props: any) {
           <Autocomplete
             size="sm"
             radius="lg"
-            placeholder={"検索"}
-            w={"80%"}
+            placeholder="検索"
+            w="80%"
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 location.href = `/?q=${e.currentTarget.value}`;
               }
             }}
-            onLoad={
-              props.query
-                ? (e: any) => (e.currentTarget.value = props.query)
-                : undefined
-            }
+            onLoad={(e) => (e.currentTarget.value = props.query)}
             onChange={(query: string) => {
-              setQuery(query);
             }}
             data={query.length > 0 ? autocompletedata : []}
           />
         </Grid.Col>
         <Grid.Col span={1}>
-          <Text size="sm" color="gray" fw={"lighter"} my={"6px"}>
+          <Text size="sm" color="gray" fw="lighter" my="6px">
             v 1.1.3
           </Text>
         </Grid.Col>
       </Grid>
     </Paper>
   );
-}
+};
+
+export default Header;
