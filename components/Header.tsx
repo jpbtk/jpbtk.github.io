@@ -4,18 +4,22 @@ import { Paper, Grid, Text, Autocomplete } from "@mantine/core";
 import { PiYoutubeLogoDuotone } from "react-icons/pi";
 import { useRouter } from "next/navigation";
 
-interface HeaderProps {
-}
 
-const Header: React.FC<HeaderProps> = (props) => {
-  const [autocompletedata, setAutocompletedata] = useState<Array<string>>([]);
-  const [query, setQuery] = useState<string>("");
-  const router = useRouter();
-
+export default function Header(props: any) {
   return (
-    <Paper shadow="xl" radius="lg" withBorder w="90%" m="auto" p="lg" mt="lg" mb="lg">
+    <Paper
+      shadow="xl"
+      radius="lg"
+      withBorder
+      w={"90%"}
+      m={"auto"}
+      p={"lg"}
+      mt={"lg"}
+      mb={"lg"}
+    >
       <Grid>
         <Grid.Col span={3}>
+          {/*change by viewport size*/}
           <Text
             size="xl"
             fw={700}
@@ -24,7 +28,11 @@ const Header: React.FC<HeaderProps> = (props) => {
           >
             <PiYoutubeLogoDuotone
               size={32}
-              style={{ verticalAlign: "bottom", marginRight: 8, color: "#e83976" }}
+              style={{
+                verticalAlign: "bottom",
+                marginRight: 8,
+                color: "#e83976",
+              }}
             />
             The Tube
           </Text>
@@ -33,18 +41,15 @@ const Header: React.FC<HeaderProps> = (props) => {
           <Autocomplete
             size="sm"
             radius="lg"
-            placeholder="検索"
-            w="80%"
-          />
+            placeholder={"検索"}
+            w={"80%"}          />
         </Grid.Col>
         <Grid.Col span={1}>
-          <Text size="sm" color="gray" fw="lighter" my="6px">
+          <Text size="sm" color="gray" fw={"lighter"} my={"6px"}>
             v 1.1.3
           </Text>
         </Grid.Col>
       </Grid>
     </Paper>
   );
-};
-
-export default Header;
+}
