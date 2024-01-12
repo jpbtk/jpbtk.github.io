@@ -3,6 +3,9 @@ import { Paper, Grid, Text, Autocomplete } from "@mantine/core";
 import { PiYoutubeLogoDuotone } from "react-icons/pi";
 import { useRouter } from "next/navigation";
 
+interface HeaderProps {
+}
+
 const Header: React.FC<HeaderProps> = (props) => {
   const [autocompletedata, setAutocompletedata] = useState<Array<string>>([]);
   const [query, setQuery] = useState<string>("");
