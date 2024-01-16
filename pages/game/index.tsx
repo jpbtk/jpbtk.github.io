@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Header from "@/components/Header";
-import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const [guess, setGuess] = useState<number | null>(null);
