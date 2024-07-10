@@ -3,7 +3,6 @@ import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import BalancePage from './components/BalancePage';
 import UuidPage from "./components/UuidPage";
 import EstatePage from "./components/EstatePage";
-import config from './tsconfig.json'
 import HomePage from "./components/HomePage";
 import './css/App.css'
 import './css/Header.css'
